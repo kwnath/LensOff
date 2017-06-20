@@ -1,2 +1,7 @@
-<h1>Lenses#index</h1>
-<p>Find me in app/views/lenses/index.html.erb</p>
+<h1>Lenses</h1>
+<p>All these lenses</p>
+<% @lenses.each do |lense| %>
+<p><strong> <%= lense.name %> </strong></p>
+  <p>$<%= lense.price %> </p>
+  <p> <strong> <%= lense.condition %> </strong></p>
+<% end %>
