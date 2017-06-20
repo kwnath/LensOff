@@ -5,17 +5,17 @@
 
   <%= l.input :name %>
   <%= l.input :price %>
-  <%= l.input :condition %>
+  <%= l.input :condition, collection: ["Poor", "Medium", "Good", "Very Good", "Mint"] %>
   <%= l.input :brandname %>
   <%= l.input :aperture_min %>
   <%= l.input :aperture_max %>
   <%= l.input :focal_length_min %>
   <%= l.input :focal_length_max %>
-  <%= l.input :image_stabilization %>
+  <%= l.input :image_stabilization, collection: ["Yes", "No"] %>
   <%= l.input :mount_type %>
   <%= l.input :camera_type %>
 
-<!--   <%= l.input :photo, as: :attachinary %> -->
+
 
   <%= l.button :submit %>
 <% end %>
