@@ -13,5 +13,13 @@ array = %w(old new used good)
     name: Faker::Book.title,
     description: Faker::Book.publisher,
     price: Faker::Number.number(3),
-    condition: array.sample )
+    condition: array.sample,
+    brandname: Faker::Book.title,
+    aperture_min: Faker::Number.number(1),
+    aperture_max: Faker::Number.number(1),
+    focal_length_min: Faker::Number.number(1),
+    focal_length_max: Faker::Number.number(1),
+    image_stabilization: Faker::Boolean.boolean,
+    mount_type: Faker::Book.publisher,
+    camera_type: Faker::Book.publisher   )
 end
