@@ -9,6 +9,7 @@ gem 'rails', '5.0.3'
 gem 'redis'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'omniauth-facebook'
+gem 'faker'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

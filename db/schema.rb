@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620014644) do
+ActiveRecord::Schema.define(version: 20170620041330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,16 @@ ActiveRecord::Schema.define(version: 20170620014644) do
     t.text     "description"
     t.integer  "price"
     t.string   "condition"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "brandname"
+    t.integer  "aperture_min"
+    t.integer  "aperture_max"
+    t.integer  "focal_length_min"
+    t.integer  "focal_length_max"
+    t.string   "image_stabilization"
+    t.string   "mount_type"
+    t.string   "camera_type"
   end
 
   create_table "taggings", force: :cascade do |t|

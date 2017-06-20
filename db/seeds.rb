@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+array = %w(old new used good)
+
+3.times do
+  Lense.create(
+    name: Faker::Book.title,
+    description: Faker::Book.publisher,
+    price: Faker::Number.number(3),
+    condition: array.sample )
+end
