@@ -8,13 +8,18 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @lense = Lense.find(params[:lense_id])
     @booking = Booking.new
   end
 
   def create
+    @lense = Lense.find(params[:lense_id])
     @booking = Booking.new(booking_params)
+    @booking.lense = @lense
+    @booking.user = current_user
+
     if @booking.save
-      redirect_to lense_booking_path(@booking)
+      redirect_to lenses_path
     else
       render :new
     end
@@ -39,7 +44,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :start_date, :end_date, :lense_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
 end
