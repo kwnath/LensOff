@@ -40,7 +40,7 @@ class LensesController < ApplicationController
   private
 
   def lenses_params
-    params.require(:lense).permit(:name, :description, :price, :condition, :brandname, :aperture_min, :aperture_max, :focal_length_min, :focal_length_max, :image_stabilization, :mount_type, :camera_type)
+    params.require(:lense).permit(:name, :description, :price, :condition, :brandname, :aperture_min, :aperture_max, :focal_length_min, :focal_length_max, :image_stabilization, :mount_type, :camera_type, photos: [])
   end
 
 end
