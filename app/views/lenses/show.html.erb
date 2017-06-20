@@ -2,6 +2,9 @@
 
 <h1><%= @lense.name %></h1>
 
+<%= if @lense.photo?%>
+<%= cl_image_tag @lense.photo.path, width: 350, height: 350, crop: :fill %>
+<% end %>
 
 <ul>
 <li><%= @lense.description %></li>
