@@ -1,0 +1,7 @@
+
+<%= simple_form_for [@lense, @booking] do |f| %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :end_date, as: :date %>
+  <%= f.button :submit %>
+<% end %>
+
