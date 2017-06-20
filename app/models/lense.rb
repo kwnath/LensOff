@@ -10,6 +10,7 @@ class Lense < ApplicationRecord
   validates :image_stabilization, presence: true
   validates :mount_type, presence: true
   validates :camera_type, presence: true
+  has_attachments :photos, maxiumum: 5
 
   # acts_as_taggable_on :mount, :min_aperture, :max_aperture
 
