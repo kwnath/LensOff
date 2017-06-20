@@ -4,7 +4,7 @@
 <%= simple_form_for(@lense) do |l| %>
 
   <%= l.input :name %>
-  <%= f.input :photos, as: :attachinary %>
+  <%= l.input :photos, as: :attachinary %>
   <%= l.input :description %>
   <%= l.input :price %>
   <%= l.input :condition, collection: ["Poor", "Medium", "Good", "Very Good", "Mint"] %>

@@ -2,8 +2,9 @@
 
 <h1><%= @lense.name %></h1>
 
-<%= if @lense.photo?%>
-<%= cl_image_tag @lense.photo.path, width: 350, height: 350, crop: :fill %>
+
+<% @lense.photos.each do |p| %>
+  <%= cl_image_tag p.path, :client_hints=>true, :width=>"auto:100:387", :height=>"300", :crop=>"fit" %>
 <% end %>
 
 <ul>
