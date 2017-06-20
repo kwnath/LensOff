@@ -14,7 +14,6 @@
 # Configure Using Gemfile
 # gem 'pg'
 
-
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -30,10 +29,10 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  username: rails_dev
+  username: <%= ENV['DATABASE_USER_NAME'] %>
 
   # The password associated with the postgres role (username).
-  password: 123456
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -61,8 +60,8 @@ test:
   database: rails-airbnb-clone_test
   host: localhost
   port: 5432
-  username: rails_dev
-  password: 123456
+  username: <%= ENV['DATABASE_USER_NAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
