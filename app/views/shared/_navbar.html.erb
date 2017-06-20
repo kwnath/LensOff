@@ -1,0 +1,101 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <img src="<%= image_path "camera.svg" %>" />
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Search form -->
+    <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+
+    <!-- Text link -->
+    <!-- Notification link-->
+<!--     <a href="" class="navbar-wagon-item navbar-wagon-link">
+      <div class="badge-container">
+        <i class="fa fa-envelope-o"></i>
+        <div class="badge badge-blue"></div>
+      </div>
+    </a> -->
+
+    <!-- Profile picture and dropdown -->
+
+    <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link") %>
+    <% else %>
+    <div class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b><span class="caret"></span></a>
+      <ul id="login-dp" class="dropdown-menu">
+        <li>
+           <div class="row">
+              <div class="col-md-12">
+                Login via
+                <div class="social-buttons">
+                  <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                </div>
+                  or
+                 <form class="form" role="form" method="post" action="users/sign_in" accept-charset="UTF-8" id="login-nav">
+                    <div class="form-group">
+                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                       <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                       <label class="sr-only" for="exampleInputPassword2">Password</label>
+                       <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                       <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    </div>
+                    <div class="checkbox">
+                       <label>
+                       <input type="checkbox"> Remember me
+                       </label>
+                    </div>
+                 </form>
+              </div>
+              <div class="bottom text-center">
+                New here ? <a href="#"><b>Join Us</b></a>
+              </div>
+           </div>
+        </li>
+      </ul>
+        </div>
+    <% end %>
+
+
+    <% if false %>
+    <% if user_signed_in? %>
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Dashboard - to add path/presenter</a></li>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link") %>
+        </ul>
+      </div>
+    </div>
+    <% else %>
+      <%= link_to('Login', new_user_session_path, class: "navbar-wagon-item navbar-wagon-link")  %>
+    <% end %>
+    <% end %>
+    <!-- Button (call-to-action) -->
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">Some mobile link</a></li>
+        <li><a href="#">Other one</a></li>
+        <li><a href="#">Other one</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

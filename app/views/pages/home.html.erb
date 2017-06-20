@@ -1,13 +1,49 @@
-<h1>Be a pro photographer (some tagline...)</h1>
-<h2>What we do (headline)</h2>
-<p>lensoff lets you rent cool professional lenses for only a franction of their price... and some other stuff here...</p>
-<h2>How to rent a lens?</h2>
-<img src="http://via.placeholder.com/300x300" alt="">
-<p>Select your camera type...</p>
-<img src="http://via.placeholder.com/300x300" alt="">
-<p>...select your lens...</p>
-<img src="http://via.placeholder.com/300x300" alt="">
-<p>... tadaaa! DONE! As simple as that.</p>
+<!-- Gradient background animated -->
+<div class="banner_background">
+<div class="row text-center">
+  <div class="col-xs-12 col-md-12">
+    <div class="padding-30">
+      <object data="<%= image_path 'camera.svg' %>" type="image/svg+xml" class="banner-image"></object>
+      <p>Professional lenses</p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="text-center">
+    <h2>How do I rent a lense?</h2>
+</div>
 
-<%= link_to "Browse Lenses", lenses_path %>
+<div class="padding-20"></div>
+<div class="row text-center">
+<div class="col-xs-12 col-md-8 col-md-offset-2">
+      <%= link_to(lenses_path) do %>
+        <div class="col-xs-12 col-md-4 padding-10 no-text-decoration">
+          <svg class="icon">
+            <use xlink:href="#technology-1" />
+          </svg>
+            <p>Select your camera type</p>
+        </div>
+      <% end %>
+      <div class="col-xs-12 col-md-4 padding-10">
+        <svg class="icon">
+          <use xlink:href="#technology-3" />
+        </svg>
+        <p>Select your lens</p>
+      </div>
+      <div class="col-xs-12 col-md-4 padding-10">
+        <svg class="icon">
+          <use xlink:href="#technology-3" />
+        </svg>
+        <p>... tadaaa! DONE! As simple as that.</p>
+      </div>
+      </div>
+</div>
+
+<div class="padding-30"></div>
+<div class="text-center">
+  <%= link_to "Browse Lenses", lenses_path, class: "btn btn-primary" %>
+</div>
+
+<!-- Icons -->
+<%= render 'shared/icons' %>
 
