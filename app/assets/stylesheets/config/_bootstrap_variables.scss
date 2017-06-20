@@ -5,10 +5,19 @@
 
 // General style
 $font-family-sans-serif:  $base-font;
-$body-bg:                 white;
+$body-bg:                 $bg-color;
 $font-size-base:          $base-size;
 $line-height-base:        $base-height;
+$link-hover-decoration:   none;
+
+
+// Headings
 $headings-font-family:    $header-font;
+$headings-font-weight:    600;
+$headings-color:          $headers-color;
+$font-size-h1:            40px;
+$font-size-h2:            30px;
+$font-size-h3:            25px;
 
 // Semantic color scheme
 // => http://getbootstrap.com/customize/#colors
