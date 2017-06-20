@@ -9,11 +9,9 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
-  <ul class="hmenu">
-  <%= render 'devise/menu/navbar' %>
-  </ul>
-     <p class="notice"><%= notice %></p>
+      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
+    <%= render 'devise/menu/navbar' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
   </body>
