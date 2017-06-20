@@ -1,2 +1,27 @@
-<h1>Lenses#new</h1>
-<p>Find me in app/views/lenses/new.html.erb</p>
+<h1>New Lens</h1>
+
+
+<%= simple_form_for(@lense) do |l| %>
+
+  <%= l.input :name %>
+  <%= f.input :photos, as: :attachinary %>
+  <%= l.input :description %>
+  <%= l.input :price %>
+  <%= l.input :condition, collection: ["Poor", "Medium", "Good", "Very Good", "Mint"] %>
+  <%= l.input :brandname %>
+  <%= l.input :aperture_min %>
+  <%= l.input :aperture_max %>
+  <%= l.input :focal_length_min %>
+  <%= l.input :focal_length_max %>
+  <%= l.input :image_stabilization, collection: ["Yes", "No"] %>
+  <%= l.input :mount_type %>
+  <%= l.input :camera_type %>
+
+
+
+  <%= l.button :submit %>
+<% end %>
+
+<%= link_to "back", lenses_path %>
+
+

@@ -1,2 +1,25 @@
-<h1>Lenses#show</h1>
-<p>Find me in app/views/lenses/show.html.erb</p>
+<h1>Lense Show</h1>
+
+<h1><%= @lense.name %></h1>
+
+<%= if @lense.photo?%>
+<%= cl_image_tag @lense.photo.path, width: 350, height: 350, crop: :fill %>
+<% end %>
+
+<ul>
+<li><%= @lense.description %></li>
+<li><%= @lense.price %> </li>
+<li><%= @lense.condition %> </li>
+<li><%= @lense.brandname %> </li>
+<li> f<%= @lense.aperture_min %>-<%= @lense.aperture_max %> </li>
+<li><%= @lense.focal_length_min %>-<%= @lense.focal_length_max %> mm </li>
+<li><%= @lense.image_stabilization %> </li>
+<li><%= @lense.mount_type %> </li>
+<li><%= @lense.camera_type %> </li>
+
+</ul>
+
+
+<%= link_to "back", lenses_path %>
+
+<%= link_to "edit",  edit_lense_path %>

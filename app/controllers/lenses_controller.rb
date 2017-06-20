@@ -15,7 +15,7 @@ class LensesController < ApplicationController
   def create
     @lense = Lense.create(lenses_params)
     if @lense.save
-      redirect_to lenses_path(@lense)
+      redirect_to lense_path(@lense)
     else
       render :new
     end
@@ -23,12 +23,14 @@ class LensesController < ApplicationController
 
   def edit
     @lense = Lense.find(params[:id])
+    render :new
+
   end
 
   def update
     @lense = Lense.find(params[:id])
-    @lense.update(params[:lense])
-    redirect_to lenses_path(@lense)
+    @lense.update(lenses_params)
+    redirect_to lense_path(@lense)
   end
 
   def destroy
@@ -38,7 +40,7 @@ class LensesController < ApplicationController
   private
 
   def lenses_params
-    params.require(:lense).permit(:name, :description, :price, :condition, :brandname, :aperture_min, :aperture_max, :focal_length_min, :focal_length_max, :image_stabilization, :mount_type, :camera_type)
+    params.require(:lense).permit(:name, :description, :price, :condition, :brandname, :aperture_min, :aperture_max, :focal_length_min, :focal_length_max, :image_stabilization, :mount_type, :camera_type, photos: [])
   end
 
 end
