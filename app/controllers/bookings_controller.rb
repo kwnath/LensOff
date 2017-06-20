@@ -26,6 +26,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @lense = Lense.find(params[:lense_id])
     @booking = Booking.find(params[:id])
     render :new
   end
