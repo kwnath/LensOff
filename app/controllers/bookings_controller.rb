@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to lenses_path
+      redirect_to lense_bookings_path(@lense)
     else
       render :new
     end
@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to lense_booking_path(@booking)
+    redirect_to lense_booking_path(params[:lense_id],@booking)
   end
 
   def destroy

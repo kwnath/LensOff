@@ -6,7 +6,6 @@
   <%= cl_image_tag p.path, :client_hints=>true, :width=>"auto:100:387", :height=>"300", :crop=>"fit" %>
 <% end %>
 
-
 <%= @lense.description %>
 <%= @lense.price %>
 <%= @lense.condition %>
@@ -16,8 +15,6 @@
 <%= @lense.image_stabilization %>
 <%= @lense.mount_type %>
 <%= @lense.camera_type %>
-
-
 
 <%= link_to "back", lenses_path %>
 
