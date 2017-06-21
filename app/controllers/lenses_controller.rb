@@ -2,6 +2,32 @@ class LensesController < ApplicationController
 
   def index
     @lenses = Lense.all
+    @search = Lense.new
+  end
+
+  def search
+    aa = lenses_params[:camera_type]
+    bb = lenses_params[:brandname]
+    cc = lenses_params[:mount_type]
+
+    if !aa.empty? && !bb.empty? && !cc.empty?
+      @lenses = Lense.where(:camera_type => aa, :brandname => bb, :mount_type => cc)
+    elsif !aa.empty? && !bb.empty?
+      @lenses = Lense.where(:camera_type => aa, :brandname => bb)
+    elsif !aa.empty? && !cc.empty?
+      @lenses = Lense.where(:camera_type => aa, :mount_type => cc)
+    elsif !cc.empty? && !bb.empty?
+      @lenses = Lense.where(:mount_type => cc, :brandname => bb)
+    elsif !aa.empty?
+      @lenses = Lense.where(:camera_type => aa)
+    elsif !bb.empty?
+      @lenses = Lense.where(:brandname => bb)
+    elsif !cc.empty?
+      @lenses = Lense.where(:mount_type => cc)
+    end
+
+    # byebug
+
   end
 
   def show

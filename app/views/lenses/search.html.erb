@@ -1,0 +1,14 @@
+<h1>search results</h1>
+
+<% if @lenses == nil %>
+<%= "No results" %>
+<% else %>
+
+<% @lenses.each do |lense| %>
+<p><strong> <%= lense.name %> </strong></p>
+<p><%= lense.camera_type %> </p>
+  <p><%= lense.brandname %> </p>
+  <p><%= lense.mount_type %> </p><% end %>
+<% end %>
+
+<%= link_to 'back', lenses_path %>
