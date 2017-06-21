@@ -1,3 +1,4 @@
+<div class="col-xs-6 col-xs-offset-3">
 <h1>Dashboard</h1>
 <h2>My lenses</h2>
 <% current_user.lenses.each do |l| %>
@@ -18,7 +19,4 @@
     <li><%= link_to "Booking details", lense_booking_path(b.lense.id, b.id) %></li>
   </ul>
 <% end %>
-
-
-
-
+</div>
