@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/lenses/search', to: 'lenses#search'
   resources :lenses do
       resources :bookings
   end
