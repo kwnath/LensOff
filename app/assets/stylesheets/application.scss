@@ -22,7 +22,13 @@ html {
 
 body {
   font-weight: 300;
+  margin: 0;
   margin-bottom: 150px;
+}
+
+.wrapper {
+  width: 750px;
+  margin: auto;
 }
 
 .margin-bottom-5 {
@@ -74,6 +80,10 @@ body {
   font-size: 20px;
 }
 
+.description {
+  padding: 20px;
+}
+
 
 a, a:active, a:visited {
   color: $text-color;
@@ -98,4 +108,8 @@ hr {
 .alert {
   float: left;
   text-align: center;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
 }
