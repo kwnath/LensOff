@@ -1,6 +1,16 @@
 <h1>Dashboard</h1>
 <h2>My lenses</h2>
-<% @booked_lenses.each do |l| %>
+<% current_user.lenses.each do |l| %>
   <%= l.name %>
+  <%= l.price %>
+  <%= l.condition %>
+  <p><% link_to "Details", lense_path(l.id) %></p>
 <% end %>
+
 <h2>My bookings</h2>
+<% current_user.booked_lenses.each do |l| %>
+  <%= l.name %>
+  <%= l.price %>
+  <%= l.condition %>
+  <p><% link_to "Details", lense_booking_path(l.id) %></p>
+<% end %>
