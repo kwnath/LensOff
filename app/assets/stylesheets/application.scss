@@ -63,18 +63,39 @@ body {
   padding-top: 20px;
 }
 
+.header-title{
+  padding: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.text-bigger {
+  font-size: 20px;
+}
 
 
-// We should specify the class, otherwise all links are going to be like this.
+a, a:active, a:visited {
+  color: $text-color;
+  font-weight: 400;
+  box-shadow: inset 0 -10px 0 $a-underline;
+}
 
-// a, a:active, a:visited {
-//   color: $text-color;
-//   font-weight: 400;
-//   box-shadow: inset 0 -10px 0 $a-underline;
-// }
+a:hover {
+  color: $text-color;
+  font-weight: 400;
+  box-shadow: inset 0 -10px 0 $a-hover-underline;
+}
 
-// a:hover {
-//   color: $text-color;
-//   font-weight: 400;
-//   box-shadow: inset 0 -10px 0 $a-hover-underline;
-// }
+hr {
+    margin-top: 0px;
+    margin-bottom: 21px;
+    border: 0;
+    border-top: 1px solid rgba(64, 78, 92, 0.13);
+    width: 100%;
+}
+
+.alert {
+  float: left;
+  text-align: center;
+}

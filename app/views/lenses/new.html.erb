@@ -1,27 +1,18 @@
 <h1>New Lens</h1>
-
-
 <%= simple_form_for(@lense) do |l| %>
-
   <%= l.input :name %>
-  <%= l.input :photos, as: :attachinary %>
+  <%= l.input :camera_type, collection: ["DSLR", "SLR", "Mirrorless"] %>
+   <!-- l.input :photos, as: :attachinary  -->
+  <%= l.input :brandname, collection: ["Bower", "Canon", "Fujifilm", "Handevision", "IRIX", "Kowa", "Leica", "Lensbaby", "Mayer-OptikGorlitz", "Mitakon Zhongyi", "Nikon", "Olympus", "Opteka", "Panasonic", "Pentax", "Phoenix", "Samyang", "Schneider", "Sigma", "Sony", "Sunex", "Tamron", "Tokina", "Venus Optics", "Zeiss", "Other"] %>
+  <%= l.input :mount_type, collection: ["Canon EF-M", "Canon EOS", "Fujifilm X Mount", "Leica L-Mount", "Micro Four Thirds", "Nikon", "Nikon 1", "Pentax", "Pentax Q", "Sigma SA", "Sony A-mount", "Sony E-Mount", "Samsung NX", "Four Thirds", "Universal M42", "T-Mount", "Tamron Adaptall", "Other"] %>
+  <%= l.input :condition, collection: ["Poor", "Medium", "Good", "Very Good", "Mint"] %>
   <%= l.input :description %>
   <%= l.input :price %>
-  <%= l.input :condition, collection: ["Poor", "Medium", "Good", "Very Good", "Mint"] %>
-  <%= l.input :brandname %>
   <%= l.input :aperture_min %>
   <%= l.input :aperture_max %>
   <%= l.input :focal_length_min %>
   <%= l.input :focal_length_max %>
   <%= l.input :image_stabilization, collection: ["Yes", "No"] %>
-  <%= l.input :mount_type %>
-  <%= l.input :camera_type %>
-
-
-
   <%= l.button :submit %>
 <% end %>
-
 <%= link_to "back", lenses_path %>
-
-
