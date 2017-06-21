@@ -1,9 +1,10 @@
 <h1>Lenses</h1>
-<p>All these lenses</p>
-<% @lenses.each do |lense| %>
-<p><strong> <%= lense.name %> </strong></p>
-  <p>$<%= lense.price %> </p>
-  <p> <strong> <%= lense.condition %> </strong></p>
+
+<% form_tag lenses_path, :method => :get do %>
+  <%=select_tag :condition, options_for_select(Lense::CONDITIONS.map{ |condition| [condition, condition]}), :onchange => "this.form.submit();" %>
+  <%=submit_tag "Search" %>
 <% end %>
 
-<%= link_to "Add new", new_lense_path %>
+
+
+

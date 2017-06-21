@@ -1,7 +1,8 @@
 class LensesController < ApplicationController
 
   def index
-    @lenses = Lense.all
+    # @lenses = Lense.all
+    @lenses = Lense.all :conditons => {:condition => params[:condition]}
   end
 
   def show
