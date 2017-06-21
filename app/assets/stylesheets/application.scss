@@ -14,8 +14,15 @@
 @import "components/index";
 @import "pages/index";
 
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-weight: 300;
+  margin-bottom: 150px;
 }
 
 .margin-bottom-5 {
