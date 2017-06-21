@@ -18,14 +18,56 @@ body {
   font-weight: 300;
 }
 
-a, a:active, a:visited {
-  color: $text-color;
-  font-weight: 400;
-  box-shadow: inset 0 -10px 0 $a-underline;
+.margin-bottom-5 {
+  margin-bottom: 5px;
 }
 
-a:hover {
-  color: $text-color;
-  font-weight: 400;
-  box-shadow: inset 0 -10px 0 $a-hover-underline;
+.margin-bottom-10 {
+  margin-bottom: 10px;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.padding-30 {
+  padding: 30px;
+}
+
+.no-text-decoration {
+  text-decoration: none;
+  color: $gray;
+}
+
+#uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.padding-top-20 {
+  padding-top: 20px;
+}
+
+
+
+// We should specify the class, otherwise all links are going to be like this.
+
+// a, a:active, a:visited {
+//   color: $text-color;
+//   font-weight: 400;
+//   box-shadow: inset 0 -10px 0 $a-underline;
+// }
+
+// a:hover {
+//   color: $text-color;
+//   font-weight: 400;
+//   box-shadow: inset 0 -10px 0 $a-hover-underline;
+// }

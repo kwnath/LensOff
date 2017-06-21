@@ -1,0 +1,43 @@
+.svg#Capa_1 {
+  fill: white;
+}
+
+.banner-image {
+  height: 60px;
+}
+
+.banner-title {
+  color: #eeeeee;
+  font-size: 30px;
+}
+
+.banner_background {
+  background: linear-gradient(333deg, #32b796, #469ae0);
+  background-size: 400% 400%;
+  height: 350px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-animation: gradientMove 30s ease infinite;
+  -moz-animation: gradientMove 30s ease infinite;
+  animation: gradientMove 30s ease infinite;
+
+}
+
+@-webkit-keyframes gradientMove {
+    0%{background-position:0% 55%}
+    50%{background-position:100% 46%}
+    100%{background-position:0% 55%}
+}
+@-moz-keyframes gradientMove {
+    0%{background-position:0% 55%}
+    50%{background-position:100% 46%}
+    100%{background-position:0% 55%}
+}
+@keyframes gradientMove {
+    0%{background-position:0% 55%}
+    50%{background-position:100% 46%}
+    100%{background-position:0% 55%}
+}

@@ -1,13 +1,12 @@
 <div class="navbar-wagon">
   <!-- Logo -->
+
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "camera.svg" %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-
     <!--  DEVISE LOGIN -->
     <% if user_signed_in? %>
       <div id="pre-pic">

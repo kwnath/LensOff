@@ -2,24 +2,19 @@
 
 <h1><%= @lense.name %></h1>
 
-
 <% @lense.photos.each do |p| %>
   <%= cl_image_tag p.path, :client_hints=>true, :width=>"auto:100:387", :height=>"300", :crop=>"fit" %>
 <% end %>
 
-<ul>
-<li><%= @lense.description %></li>
-<li><%= @lense.price %> </li>
-<li><%= @lense.condition %> </li>
-<li><%= @lense.brandname %> </li>
-<li> f<%= @lense.aperture_min %>-<%= @lense.aperture_max %> </li>
-<li><%= @lense.focal_length_min %>-<%= @lense.focal_length_max %> mm </li>
-<li><%= @lense.image_stabilization %> </li>
-<li><%= @lense.mount_type %> </li>
-<li><%= @lense.camera_type %> </li>
-
-</ul>
-<%= link_to "booking", new_lense_booking_path(@lense) %>
+<%= @lense.description %>
+<%= @lense.price %>
+<%= @lense.condition %>
+<%= @lense.brandname %>
+ f<%= @lense.aperture_min %>-<%= @lense.aperture_max %>
+<%= @lense.focal_length_min %>-<%= @lense.focal_length_max %> mm
+<%= @lense.image_stabilization %>
+<%= @lense.mount_type %>
+<%= @lense.camera_type %>
 
 <%= link_to "back", lenses_path %>
 

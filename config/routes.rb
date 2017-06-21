@@ -3,6 +3,8 @@ Rails.application.routes.draw do
       resources :bookings
   end
 
+  resources :bookings, only: [:show]
+
   mount Attachinary::Engine => "/attachinary"
 
   devise_for :users,

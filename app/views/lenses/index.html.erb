@@ -1,6 +1,12 @@
 <h1>Lenses</h1>
 <p>All these lenses</p>
 <% @lenses.each do |lense| %>
+  <% if lense.photos? %>
+
+      <%= cl_image_tag lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"150", :crop=>"fit"%>
+  <% else %>
+    <%= lense.name %>
+  <% end %>
 <p><strong> <%= lense.name %> </strong></p>
   <p>$<%= lense.price %> </p>
   <p> <strong> <%= lense.condition %> </strong></p>
