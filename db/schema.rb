@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620073802) do
+ActiveRecord::Schema.define(version: 20170621070132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20170620073802) do
     t.string   "image_stabilization"
     t.string   "mount_type"
     t.string   "camera_type"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_lenses_on_user_id", using: :btree
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -109,4 +111,5 @@ ActiveRecord::Schema.define(version: 20170620073802) do
 
   add_foreign_key "bookings", "lenses"
   add_foreign_key "bookings", "users"
+  add_foreign_key "lenses", "users"
 end
