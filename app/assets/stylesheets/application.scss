@@ -74,6 +74,10 @@ body {
   font-size: 20px;
 }
 
+.description {
+  padding: 20px;
+}
+
 
 a, a:active, a:visited {
   color: $text-color;
@@ -98,4 +102,8 @@ hr {
 .alert {
   float: left;
   text-align: center;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
 }
