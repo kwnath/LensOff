@@ -18,6 +18,14 @@ body {
   font-weight: 300;
 }
 
+.margin-bottom-5 {
+  margin-bottom: 5px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -37,6 +45,15 @@ body {
 .no-text-decoration {
   text-decoration: none;
   color: $gray;
+}
+
+#uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.padding-top-20 {
+  padding-top: 20px;
 }
 
 

@@ -2,46 +2,55 @@
 <div class="banner_background">
 <div class="row text-center">
   <div class="col-xs-12 col-md-12">
-    <div class="padding-30">
-      <object data="<%= image_path 'camera.svg' %>" type="image/svg+xml" class="banner-image"></object>
-      <p>Professional lenses</p>
+    <div class="padding-30 fadeIn">
+        <svg class="icon icon-7">
+          <use xlink:href="#technology-2" />t
+        </svg>
+        <br>
+      <span class="banner-title" >Professional lenses</span>
     </div>
   </div>
 </div>
 </div>
-<div class="text-center">
-    <h2>How do I rent a lense?</h2>
+<div class="text-center padding-top-20">
+    <h1 id="uppercase">How can I rent a lens?</h1>
 </div>
 
 <div class="padding-20"></div>
-<div class="row text-center">
-<div class="col-xs-12 col-md-8 col-md-offset-2">
+  <div class="row text-center pullUp">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
       <%= link_to(lenses_path) do %>
-        <div class="col-xs-12 col-md-4 padding-10 no-text-decoration">
-          <svg class="icon">
-            <use xlink:href="#technology-1" />
+        <div class="col-xs-12 col-md-4 no-text-decoration feature">
+          <svg class="icon icon-4 margin-bottom-5">
+            <use xlink:href="#camera" />
           </svg>
             <p>Select your camera type</p>
         </div>
       <% end %>
-      <div class="col-xs-12 col-md-4 padding-10">
-        <svg class="icon">
-          <use xlink:href="#technology-3" />
-        </svg>
-        <p>Select your lens</p>
-      </div>
-      <div class="col-xs-12 col-md-4 padding-10">
-        <svg class="icon">
-          <use xlink:href="#technology-3" />
+      <%= link_to(lenses_path) do %>
+        <div class="col-xs-12 col-md-4 no-text-decoration feature">
+          <svg class="icon icon-4 margin-bottom-10">
+            <use xlink:href="#technology-2" />
+          </svg>
+          <p>Select your lens</p>
+        </div>
+      <% end %>
+
+      <%= link_to do %>
+      <div class="col-xs-12 col-md-4 margin-bottom-10 no-text-decoration feature">
+        <svg class="icon icon-4 margin-bottom-10">
+          <use xlink:href="#firework" />t
         </svg>
         <p>... tadaaa! DONE! As simple as that.</p>
       </div>
-      </div>
+      <% end %>
+    </div>
 </div>
 
-<div class="padding-30"></div>
-<div class="text-center">
-  <%= link_to "Browse Lenses", lenses_path, class: "btn btn-primary" %>
+<div class="padding-20">
+  <div class="text-center">
+    <%= link_to "Browse Lenses", lenses_path, class: "btn-lens btn-lens-primary" %>
+  </div>
 </div>
 
 <!-- Icons -->
