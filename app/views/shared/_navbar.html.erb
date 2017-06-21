@@ -8,30 +8,26 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
 
-    <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
-
-    <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Team</a>
-
-    <!-- Profile picture and dropdown -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
-      </div>
-    </div>
-
     <!--  DEVISE LOGIN -->
     <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-    <% else %>
-      <%= link_to('Login', new_user_session_path)  %>
+      <div id="pre-pic">
+      <%= link_to 'Search', lenses_path, class: "navbar-wagon-item" %>
+      <%= link_to 'Lend a Lens', new_lense_path, class: "navbar-wagon-item" %>
+      </div>
+
+      <!-- AVATAR -->
+      <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+      <%= image_tag avatar_url, class: "avatar navbar-wagon-item", id: "navbar-wagon-menu" %>
+      <div id="login">
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "navbar-wagon-item") %>
+      </div>
+      <% else %>
+      <div id="login">
+      <%= link_to('Login', new_user_session_path, class: "navbar-wagon-item")  %>
+      </div>
     <% end %>
+  </div>
+</div>
 
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
@@ -44,7 +40,3 @@
       </ul>
     </div>
   </div>
-  </div>
-</div>
-
-
