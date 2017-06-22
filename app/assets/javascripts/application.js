@@ -7,6 +7,7 @@
 //= require underscore
 //= require gmaps/google
 //= require jquery.slick
+//= require bootstrap-3-datepicker
 //= require_tree .
 
 window.setTimeout(function() {

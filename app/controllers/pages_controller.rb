@@ -1,11 +1,7 @@
 class PagesController < ApplicationController
   def home
-
     @lenses = Lense.where.not(latitude: nil, longitude: nil)
     # @lense = Lense.find(params[:id])
-
-
-
     @hash = Gmaps4rails.build_markers(@lenses) do |l, marker|
       marker.lat l.latitude
       marker.lng l.longitude
@@ -17,7 +13,6 @@ class PagesController < ApplicationController
 
   def error_message
   end
-
   def super
     @users = User.all
   end

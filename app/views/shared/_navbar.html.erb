@@ -10,13 +10,13 @@
     <!--  DEVISE LOGIN -->
     <% if user_signed_in? %>
       <div id="pre-pic">
-      <%= link_to 'Search', lenses_path, class: "navbar-wagon-item" %>
-      <%= link_to 'Lend a Lens', new_lense_path, class: "navbar-wagon-item" %>
+        <%= link_to 'Search', lenses_path, class: "navbar-wagon-item" %>
+        <%= link_to 'Lend a Lens', new_lense_path, class: "navbar-wagon-item" %>
       </div>
 
       <!-- AVATAR -->
-      <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
       <div class="dropdown">
+      <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
         <%= image_tag avatar_url, class: "avatar navbar-wagon-item dropdown-toggle", id: "navbar-wagon-menu", "data-toggle"=>"dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to "Dashboard", dashboard_path %></li>
@@ -29,6 +29,8 @@
       </div>
     <% end %>
   </div>
+
+
 
     <!-- Dropdown appearing on mobile only -->
   <div class="hidden-md hidden-lg">
