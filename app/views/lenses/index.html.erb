@@ -1,8 +1,8 @@
 
   <div class="row text-center">
+      <%= render 'shared/search' %>
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-    <%= render 'shared/search' %>
-    <h1 class="header-title" >All lenses</h1>
+    <h1 class="header-title" >All our lenses</h1>
       <% @lenses.each do |lense| %>
       <%= link_to lense_path(lense) do %>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">

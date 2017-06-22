@@ -1,7 +1,7 @@
 
 <%= simple_form_for [@lense, @booking] do |f| %>
-  <%= f.input :start_date, as: :datetime %>
-  <%= f.input :end_date, as: :datetime %>
-  <%= f.button :submit %>
+<%= f.input :start_date, input_html: {data: { provide: :datepicker}}, as: :string, :value => Date.today %>
+<%= f.input :end_date, input_html: {data: { provide: :datepicker}}, as: :string, :value => Date.today %>
+ <%= f.button :submit %>
 <% end %>
 

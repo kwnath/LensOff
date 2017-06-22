@@ -1,5 +1,4 @@
-<div class="container">
-<div class="col-sm-4 col-sm-offset-4">
+<div class="col-sm-4 col-sm-offset-4 text-center">
   <%= simple_form_for @search, :url => lenses_search_path, :method => :get do |l| %>
 
     <%= l.input :camera_type, prompt: 'Camera type', label: false, collection: ["DSLR", "SLR", "Mirrorless"] %>
@@ -12,7 +11,6 @@
 
   <% end %>
   </div>
-</div>
 
 
 

@@ -35,14 +35,31 @@
         </div>
         <% if user_signed_in? %>
           <% if @lense.user_id == current_user.id %>
-            <%= link_to "edit",  edit_lense_path, class: "btn-lens-primary btn-lens  margin-bot-25 margin-top-5" %>
+            <%= link_to "edit",  edit_lense_path, class: "btn-lens-primary btn-lens margin-bot-25 margin-top-5" %>
             <% else %>
               <%= link_to "book",  new_lense_booking_path(@lense), class: "btn-lens-primary btn-lens margin-bot-30" %>
         <% end %>
           <% else %>
-              <%= link_to "book",  new_lense_booking_path(@lense), class: "btn-lens-primary btn-lens margin-bottom-10" %>
+              <button type="button" class="btn-lens-primary btn-lens margin-bottom-10" data-toggle="modal" data-target="#bookModal">Book</button>
         <% end %>
           </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
 </div>

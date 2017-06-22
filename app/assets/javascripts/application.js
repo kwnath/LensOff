@@ -5,6 +5,7 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require jquery.slick
+//= require bootstrap-3-datepicker
 //= require_tree .
 
 window.setTimeout(function() {
