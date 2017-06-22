@@ -4,6 +4,7 @@
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require jquery.slick
 //= require_tree .
 
 window.setTimeout(function() {
@@ -12,4 +13,11 @@ window.setTimeout(function() {
     });
 }, 2000);
 
+
+$('.single-item').slick({
+  arrows: false,
+  dots: true,
+  autoplay: true,
+  autoplaySpeed: 5000
+});
 

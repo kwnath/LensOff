@@ -6,7 +6,7 @@
     <li>Lens name: <%= l.name %></li>
     <li>Lens price: <%= l.price %></li>
     <li>Lens condition: <%= l.condition %></li>
-    <p><%= link_to "Lens details", lense_path(l) %></p>
+    <p><%= link_to "Lens details", lense_path(l) %><%= link_to "Delete", lense_path(l) %></p>
   </ul>
 <% end %>
 
