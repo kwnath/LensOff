@@ -28,7 +28,7 @@
 
 .navbar-brand {
   padding: 0;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -109,4 +109,8 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.dropdown a {
+  box-shadow: none !important;
 }
