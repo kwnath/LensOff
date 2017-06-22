@@ -21,3 +21,7 @@
   </ul>
 <% end %>
 </div>
+
+<% if current_user.email == 'jay.gao@139.com' %>
+<h2><%= link_to "Super Function", super_path %></h2>
+<% end %>

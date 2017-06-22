@@ -1,3 +1,4 @@
+
   <%= simple_form_for @search, :url => lenses_search_path, :method => :get do |l| %>
 
     <%= l.input :condition, prompt: 'Condition',label: false, collection: ["Poor", "Medium", "Good", "Very Good", "Mint"] %>
