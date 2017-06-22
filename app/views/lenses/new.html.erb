@@ -1,6 +1,7 @@
 <h1>New Lens</h1>
 <%= simple_form_for(@lense) do |l| %>
   <%= l.input :name %>
+  <%= l.input :address %>
   <%= l.input :camera_type, collection: ["DSLR", "SLR", "Mirrorless"] %>
    <!-- l.input :photos, as: :attachinary  -->
   <%= l.input :brandname, collection: ["Bower", "Canon", "Fujifilm", "Handevision", "IRIX", "Kowa", "Leica", "Lensbaby", "Mayer-OptikGorlitz", "Mitakon Zhongyi", "Nikon", "Olympus", "Opteka", "Panasonic", "Pentax", "Phoenix", "Samyang", "Schneider", "Sigma", "Sony", "Sunex", "Tamron", "Tokina", "Venus Optics", "Zeiss", "Other"] %>

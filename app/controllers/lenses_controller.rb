@@ -3,6 +3,15 @@ class LensesController < ApplicationController
   def index
     @lenses = Lense.all
     @search = Lense.new
+
+    @lenses = Lense.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@flats) do |lense, marker|
+      marker.lat flat.latitude
+      marker.lng flat.longitude
+    end
+
+
   end
 
   def search
