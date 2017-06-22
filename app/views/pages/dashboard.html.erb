@@ -1,0 +1,23 @@
+<div class="col-xs-6 col-xs-offset-3">
+<h1>Dashboard</h1>
+<h2>My lenses</h2>
+<% current_user.lenses.each do |l| %>
+  <ul>
+    <li>Lens name: <%= l.name %></li>
+    <li>Lens price: <%= l.price %></li>
+    <li>Lens condition: <%= l.condition %></li>
+    <p><%= link_to "Lens details", lense_path(l), class: "btn-lens-primary btn-lens" %><%= link_to "edit",  edit_lense_path(l), class: "btn-lens-primary btn-lens" %>
+<%= link_to "Delete", lense_path(l), class: "btn-lens-primary btn-lens" %></p>
+  </ul>
+<% end %>
+
+<h2>My bookings</h2>
+<% current_user.bookings.each do |b| %>
+  <ul>
+    <li>Lense name: <%= b.lense.name %></li>
+    <li>Start date: <%= b.start_date %></li>
+    <li>End date: <%= b.end_date %></li>
+    <li><%= link_to "Booking details", lense_booking_path(b.lense.id, b.id) %></li>
+  </ul>
+<% end %>
+</div>

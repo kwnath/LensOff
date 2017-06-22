@@ -8,11 +8,14 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "vendor/index";
+@import 'slick';
+@import 'slick-theme';
 
 // Your CSS
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
+@import "components/forms";
 
 
 html {
@@ -22,7 +25,17 @@ html {
 
 body {
   font-weight: 300;
+  margin: 0;
   margin-bottom: 150px;
+}
+
+#hr-length {
+  width: 10em;
+  border-color: #555555;
+}
+
+.margin-top-5 {
+  margin-top: 5px;
 }
 
 .margin-bottom-5 {
@@ -63,6 +76,14 @@ body {
   padding-top: 20px;
 }
 
+.padding-top-30 {
+  padding-top: 20px;
+}
+
+.padding-top-60 {
+  padding-top: 60px;
+}
+
 .header-title{
   padding: 20px;
   font-weight: 600;
@@ -74,6 +95,13 @@ body {
   font-size: 20px;
 }
 
+.description {
+  padding: 20px;
+}
+
+#float-left {
+  float: left;
+}
 
 a, a:active, a:visited {
   color: $text-color;
@@ -99,3 +127,23 @@ hr {
   float: left;
   text-align: center;
 }
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.margin-30 {
+  margin: 30px;
+}
+
+.margin-20 {
+  margin: 20px;
+}
+
+.margin-bot-25 {
+  margin-bottom: 25px;
+}
+
+// .v-center {
+//   transform: translateY(35%);
+// }

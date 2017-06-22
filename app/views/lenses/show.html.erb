@@ -1,20 +1,48 @@
-<h1>Lense Show</h1>
+<div class="container">
+  <div class="row text-center padding-top-60">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="single-item">
+            <div>
+              <%= cl_image_tag @lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"350", :crop=>"fit", class: "middle" %>
+            </div>
+          <% @lense.photos.drop(1).each do |p| %>
+            <div>
+              <%= cl_image_tag p.path, :client_hints=>true, :width=>"auto:100:387", :height=>"300", :crop=>"fit", class: "middle" %>
+            </div>
+          <% end %>
+        </div>
+        </div>
+      </div><!--
+      --><div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center v-center">
+      <div class="middle">
 
-<h1><%= @lense.name %></h1>
-
-
-
-<%= @lense.price %>
-<%= @lense.condition %>
-<%= @lense.brandname %>
- f<%= @lense.aperture_min %>-<%= @lense.aperture_max %>
-<%= @lense.focal_length_min %>-<%= @lense.focal_length_max %> mm
-<%= @lense.image_stabilization %>
-<%= @lense.mount_type %>
-<%= @lense.camera_type %>
-
-<%= render 'shared/map' %>
-
-<%= link_to "back", lenses_path %>
-
-<%= link_to "edit",  edit_lense_path %>
+        <h1 class="border"><%= @lense.name %></h1>
+        <hr id="hr-length">
+        <h3><strong><%= @lense.brandname.upcase %></strong></h3>
+        <% if @lense.description %>
+          <p><%= @lense.description %></p>
+        <% end %>
+        <p><strong>Aperture</strong>  f<%= @lense.aperture_min %>-<%= @lense.aperture_max %></p>
+        <p><strong>Focal Length:</strong>  <%= @lense.focal_length_min %>-<%= @lense.focal_length_max %>mm</p>
+        <p><strong>Image stabilization:</strong>  <%= @lense.image_stabilization %></p>
+        <p><strong>Mount:</strong>  <%= @lense.mount_type %></p>
+        <p><strong>Camera Type:</strong>  <%= @lense.camera_type %></p>
+        <strong><h3 class="border">$<%= @lense.price %>/day</h3></strong>
+                <hr id="hr-length">
+        </div>
+        <% if user_signed_in? %>
+          <% if @lense.user_id == current_user.id %>
+            <%= link_to "edit",  edit_lense_path, class: "btn-lens-primary btn-lens  margin-bot-25 margin-top-5" %>
+            <% else %>
+              <%= link_to "book",  new_lense_booking_path(@lense), class: "btn-lens-primary btn-lens margin-bot-30" %>
+        <% end %>
+          <% else %>
+              <%= link_to "book",  new_lense_booking_path(@lense), class: "btn-lens-primary btn-lens margin-bottom-10" %>
+        <% end %>
+          </div>
+      <%= render 'shared/map' %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+/* ----- SimpleForm Styles ----- */
+
+.simple_form div.input {
+  margin-bottom: 10px;
+  width: 100px;
+  clear: both; /* Required for Webkit, but not for Gecko */
+}
+
+// LABEL
+.simple_form label {
+  font-size: $base-size;
+  float: left;
+  text-align: right;
+  margin: 2px 5px;
+}
+
+// BUTTON
+div.boolean, .simple_form input[type='submit'] {
+  margin-top: 20px;
+  background-color: transparent;
+}
+
+// DROPDOWN
+.select{
+  border: 1px solid $text-color;
+  -webkit-appearance: none;
+  text-align:center;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>");
+  background-repeat:no-repeat;
+  background-position: right 15px top 8px;
+  background-size: 20px 20px;
+  background-color: transparent;
+}
+
+div.boolean label, label.collection_radio_buttons {
+  float: none;
+  margin: 0;
+}
+
+label.collection_radio_buttons {
+  margin-right: 10px;
+  vertical-align: -2px;
+  margin-left: 2px;
+}
+
+.field_with_errors {
+  background-color: #ff3333;
+}
+
+.simple_form .error {
+  clear: left;
+  color: black;
+  display: block;
+  margin-left: 120px;
+}
+
+.simple_form .hint {
+  clear: left;
+  margin-left: 120px;
+  color: #555;
+  display: block;
+  font-style: italic;
+}
+
+input.radio {
+  margin-right: 5px;
+  vertical-align: -3px;
+}
+
+input.check_boxes {
+  margin-left: 3px;
+  vertical-align: -3px;
+}
+
+label.collection_check_boxes {
+  float: none;
+  margin: 0;
+  vertical-align: -2px;
+  margin-left: 2px;
+}

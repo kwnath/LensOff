@@ -20,6 +20,7 @@ gem "gmaps4rails"
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
+gem 'jquery-slick-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

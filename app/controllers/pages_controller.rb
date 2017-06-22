@@ -14,7 +14,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    raise
+  end
+
+  def error_message
   end
 end
 end
