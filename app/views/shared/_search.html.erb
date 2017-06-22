@@ -7,10 +7,17 @@
 
     <%= l.input :mount_type, prompt: 'Mount type', label: false, collection: ["Canon EF-M", "Canon EOS", "Fujifilm X Mount", "Leica L-Mount", "Micro Four Thirds", "Nikon", "Nikon 1", "Pentax", "Pentax Q", "Sigma SA", "Sony A-mount", "Sony E-Mount", "Samsung NX", "Four Thirds", "Universal M42", "T-Mount", "Tamron Adaptall", "Other"] %>
 
+    <%= l.input :condition, prompt: 'Condition',label: false, collection: ["Poor", "Medium", "Good", "Very Good", "Mint"] %>
+    <%= l.input :image_stabilization, label: false, prompt: 'Image stabilization',collection: ["Yes", "No"] %>
+    <%= l.input :aperture_min, label: false, placeholder: 'Aperture Min' %>
+    <%= l.input :aperture_max, label: false, placeholder: 'Aperture Max' %>
+
     <%= l.button :submit, "Search", class: "btn-lens btn-lens-primary" %>
 
   <% end %>
   </div>
+
+
 
 
 
