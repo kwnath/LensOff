@@ -1,0 +1,9 @@
+<div class="form-inline">
+  <%= simple_form_for @search, :url => lenses_search_path, :method => :get do |l| %>
+    <%= l.input :condition, label: 'Condition', collection: ["Poor", "Medium", "Good", "Very Good", "Mint"] %>
+    <%= l.input :image_stabilization, collection: ["Yes", "No"] %>
+    <%= l.input :aperture_min, label: 'Aperture min' %>
+    <%= l.input :aperture_max, label: 'Aperture max' %>
+    <%= l.button :submit, "Search" %>
+  <% end %>
+</div>
