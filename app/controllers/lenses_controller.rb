@@ -1,37 +1,30 @@
 class LensesController < ApplicationController
-  before_action :authenticate_user!, :except => [:show, :index]
+  before_action :authenticate_user!, :except => [:show, :index, :search]
   def index
     @lenses = Lense.all
     @search = Lense.new
-  end
-
-  def search
-    aa = lenses_params[:camera_type]
-    bb = lenses_params[:brandname]
-    cc = lenses_params[:mount_type]
-
-    if !aa.empty? && !bb.empty? && !cc.empty?
-      @lenses = Lense.where(:camera_type => aa, :brandname => bb, :mount_type => cc)
-    elsif !aa.empty? && !bb.empty?
-      @lenses = Lense.where(:camera_type => aa, :brandname => bb)
-    elsif !aa.empty? && !cc.empty?
-      @lenses = Lense.where(:camera_type => aa, :mount_type => cc)
-    elsif !cc.empty? && !bb.empty?
-      @lenses = Lense.where(:mount_type => cc, :brandname => bb)
-    elsif !aa.empty?
-      @lenses = Lense.where(:camera_type => aa)
-    elsif !bb.empty?
-      @lenses = Lense.where(:brandname => bb)
-    elsif !cc.empty?
-      @lenses = Lense.where(:mount_type => cc)
     end
 
-    # byebug
-
+  def search
+    @lenses = Lense.where(nil)
+    lenses_params.each do |key, value|
+      @lenses = @lenses.public_send(key, value) if value.present?
+    end
   end
 
   def show
-    @lense = Lense.find(params[:id])
+
+    @lense = Lense.where.not(latitude: nil, longitude: nil).find(params[:id])
+    # @lense = Lense.find(params[:id])
+
+
+
+    @hash = Gmaps4rails.build_markers(@lense) do |l, marker|
+      marker.lat l.latitude
+      marker.lng l.longitude
+
+    end
+
   end
 
   def new
@@ -77,8 +70,12 @@ class LensesController < ApplicationController
   private
 
   def lenses_params
-    params.require(:lense).permit(:name, :description, :price, :condition, :brandname, :aperture_min, :aperture_max, :focal_length_min, :focal_length_max, :image_stabilization, :mount_type, :camera_type, photos: [])
+    params.require(:lense).permit(:name, :description, :address, :price, :condition, :brandname, :aperture_min, :aperture_max, :focal_length_min, :focal_length_max, :image_stabilization, :mount_type, :camera_type, photos: [])
   end
+
+  # def filtering_params
+  #   params.require(:lense).permit(:camera_type, :brandname, :mount_type)
+  # end
 
 end
 

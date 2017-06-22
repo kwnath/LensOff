@@ -1,5 +1,6 @@
 class Lense < ApplicationRecord
   validates :name, presence: true
+  validates :address, presence: true
   validates :price, presence: true
   validates :condition, presence: true
   validates :brandname, presence: true
@@ -12,31 +13,17 @@ class Lense < ApplicationRecord
   validates :camera_type, presence: true
   has_attachments :photos, maxiumum: 5
   belongs_to :user
+  scope :camera_type, -> (camera_type) { where camera_type: camera_type }
+  scope :brandname, -> (brandname) { where brandname: brandname }
+  scope :mount_type, -> (mount_type) { where brandname: mount_type }
+  scope :condition, -> (condition) { where condition: condition }
+  scope :image_stabilization, -> (name) { where image_stabilization: name }
+  scope :aperture_min, -> (min) { where( "aperture_min > ?", min )}
+  scope :aperture_max, -> (max) { where( "aperture_max < ?", max )}
 
-  # acts_as_taggable_on :mount, :min_aperture, :max_aperture
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
-  # def mount_type
-  #   mount
-  # end
-
-  # def min_ap
-  #   min_aperture_list.reduce.to_i
-  # end
-
-  # def max_ap
-  #   max_aperture_list.reduce.to_i
-  # end
-
-  # def in_aperture_range?(number)
-  #   number.between? min_ap, max_ap
-  # end
-
-  # def self.in_aperture_range(number)
-  #   lenses = Lense.all
-
-  #   lenses.select { |lense| lense.in_aperture_range?(number) }
-
-  # end
 
 
 

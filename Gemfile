@@ -13,7 +13,13 @@ gem 'faker'
 gem 'cloudinary'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
+gem "geocoder"
 gem 'coffee-rails'
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 gem 'jquery-slick-rails'
 gem 'rails-assets-bootstrap-3-datepicker', source: 'https://rails-assets.org'
 
