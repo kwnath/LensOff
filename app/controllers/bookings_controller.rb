@@ -1,10 +1,13 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = Booking.all
-  end
-
+  before_action :authenticate_user!
   def show
     @booking = Booking.find(params[:id])
+    if @booking.user == current_user
+      return @booking
+    else
+      redirect_to error_path
+    end
+
   end
 
   def new
@@ -19,16 +22,20 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to lense_bookings_path(@lense)
+      redirect_to dashboard_path
     else
       render :new
     end
   end
 
   def edit
-    @lense = Lense.find(params[:lense_id])
     @booking = Booking.find(params[:id])
-    render :new
+    if @booking.user == current_user
+      @lense = Lense.find(params[:lense_id])
+      render :new
+    else
+      redirect_to error_path
+    end
   end
 
   def update
@@ -39,8 +46,12 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    @booking.destroy
-    redirect_to lense_bookings_path
+    if @booking.user == current_user
+      @booking.destroy
+      redirect_to dashboard_path
+    else
+      redirect_to error_path
+    end
   end
 
   private
