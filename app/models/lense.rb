@@ -13,6 +13,12 @@ class Lense < ApplicationRecord
   validates :camera_type, presence: true
   has_attachments :photos, maxiumum: 5
   belongs_to :user
+  scope :camera_type, -> (camera_type) { where camera_type: camera_type }
+  scope :brandname, -> (brandname) { where brandname: brandname }
+  scope :condition, -> (condition) { where condition: condition }
+  scope :image_stabilization, -> (name) { where image_stabilization: name }
+  scope :aperture_min, -> (min) { where( "aperture_min > ?", min )}
+  scope :aperture_max, -> (max) { where( "aperture_max < ?", max )}
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
