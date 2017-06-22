@@ -15,6 +15,7 @@ class Lense < ApplicationRecord
   belongs_to :user
   scope :camera_type, -> (camera_type) { where camera_type: camera_type }
   scope :brandname, -> (brandname) { where brandname: brandname }
+  scope :mount_type, -> (mount_type) { where brandname: mount_type }
   scope :condition, -> (condition) { where condition: condition }
   scope :image_stabilization, -> (name) { where image_stabilization: name }
   scope :aperture_min, -> (min) { where( "aperture_min > ?", min )}
