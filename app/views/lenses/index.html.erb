@@ -27,7 +27,9 @@
 </div>
 
 <div class="text-center">
-  <p>Have a lense to rent?</p>
-  <%= link_to "Add a new lense", new_lense_path, class: "text-bigger" %>
+  <% if user_signed_in? %>
+    <p>Have a lense to rent?</p>
+    <%= link_to "Add a new lense", new_lense_path, class: "text-bigger" %>
+  <% end %>
 </div>
 
