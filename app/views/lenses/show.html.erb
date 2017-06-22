@@ -2,11 +2,8 @@
 
 <h1><%= @lense.name %></h1>
 
-<% @lense.photos.each do |p| %>
-  <%= cl_image_tag p.path, :client_hints=>true, :width=>"auto:100:387", :height=>"300", :crop=>"fit" %>
-<% end %>
 
-<%= @lense.description %>
+
 <%= @lense.price %>
 <%= @lense.condition %>
 <%= @lense.brandname %>
@@ -15,6 +12,8 @@
 <%= @lense.image_stabilization %>
 <%= @lense.mount_type %>
 <%= @lense.camera_type %>
+
+<%= render 'shared/map' %>
 
 <%= link_to "back", lenses_path %>
 
