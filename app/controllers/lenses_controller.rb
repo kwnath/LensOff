@@ -3,7 +3,7 @@ class LensesController < ApplicationController
   def index
     @lenses = Lense.all
     @search = Lense.new
-  end
+    end
 
   def search
     aa = lenses_params[:camera_type]
@@ -26,12 +26,22 @@ class LensesController < ApplicationController
       @lenses = Lense.where(:mount_type => cc)
     end
 
-    # byebug
 
   end
 
   def show
-    @lense = Lense.find(params[:id])
+
+    @lense = Lense.where.not(latitude: nil, longitude: nil).find(params[:id])
+    # @lense = Lense.find(params[:id])
+
+
+
+    @hash = Gmaps4rails.build_markers(@lense) do |l, marker|
+      marker.lat l.latitude
+      marker.lng l.longitude
+
+    end
+
   end
 
   def new
@@ -77,7 +87,7 @@ class LensesController < ApplicationController
   private
 
   def lenses_params
-    params.require(:lense).permit(:name, :description, :price, :condition, :brandname, :aperture_min, :aperture_max, :focal_length_min, :focal_length_max, :image_stabilization, :mount_type, :camera_type, photos: [])
+    params.require(:lense).permit(:name, :description, :address, :price, :condition, :brandname, :aperture_min, :aperture_max, :focal_length_min, :focal_length_max, :image_stabilization, :mount_type, :camera_type, photos: [])
   end
 
 end

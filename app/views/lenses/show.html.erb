@@ -31,7 +31,6 @@
         <p><strong>Camera Type:</strong>  <%= @lense.camera_type %></p>
         <strong><h3 class="border">$<%= @lense.price %>/day</h3></strong>
                 <hr id="hr-length">
-
         </div>
         <% if user_signed_in? %>
           <% if @lense.user_id == current_user.id %>
@@ -43,6 +42,7 @@
               <%= link_to "book",  new_lense_booking_path(@lense), class: "btn-lens-primary btn-lens margin-bottom-10" %>
         <% end %>
           </div>
+      <%= render 'shared/map' %>
     </div>
   </div>
 </div>
