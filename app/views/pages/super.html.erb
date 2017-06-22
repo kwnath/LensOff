@@ -1,0 +1,10 @@
+<h1>Super function</h1>
+<h3>show all the database infomations</h3>
+<ol>
+<% @users.each do |u| %>
+  <li><%= u.email %></li>
+  <p>Numbers of lens he owned: <%= u.lenses.length %></p>
+  <p>Numbers of bookings he ordered: <%= u.bookings.length %></p>
+  <br>
+  <% end %>
+</ol>

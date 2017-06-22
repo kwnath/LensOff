@@ -9,8 +9,7 @@ class PagesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@lenses) do |l, marker|
       marker.lat l.latitude
       marker.lng l.longitude
-
-
+    end
   end
 
   def dashboard
@@ -18,7 +17,10 @@ class PagesController < ApplicationController
 
   def error_message
   end
-end
+
+  def super
+    @users = User.all
+  end
 end
 
 
