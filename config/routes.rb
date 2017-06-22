@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/lenses/search', to: 'lenses#search'
   get 'error_lenses', to: 'lenses#error_message'
   get 'error_bookings', to: 'pages#error_message'
+  get '/user_profile/:id', to: 'pages#user_profile'
+
   resources :lenses do
       resources :bookings
   end

@@ -13,8 +13,13 @@ class PagesController < ApplicationController
 
   def error_message
   end
+
   def super
     @users = User.all
+  end
+
+  def user_profile
+    @user = User.all
   end
 end
 
