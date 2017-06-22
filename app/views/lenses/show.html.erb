@@ -1,23 +1,17 @@
-<div class="container">
-  <div class="row text-center padding-top-60">
-    <div class="col-xs-12 col-md-10 col-md-offset-1">
-      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="single-item">
-            <div>
-              <%= cl_image_tag @lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"350", :crop=>"fit", class: "middle" %>
-            </div>
-          <% @lense.photos.drop(1).each do |p| %>
-            <div>
-              <%= cl_image_tag p.path, :client_hints=>true, :width=>"auto:100:387", :height=>"300", :crop=>"fit", class: "middle" %>
-            </div>
-          <% end %>
-        </div>
-        </div>
-      </div><!--
-      --><div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center v-center">
-      <div class="middle">
 
+
+
+
+
+<div class="container padding-top-30">
+  <div class="row text-center">
+    <div class="col-xs-12 col-md-12">
+<div class="inner">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+              <%= cl_image_tag @lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"350", :crop=>"fit", class: "middle" %>
+        </div>
+     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
+      <div class="middle padding-top-20">
         <h1 class="border"><%= @lense.name %></h1>
         <hr id="hr-length">
         <h3><strong><%= @lense.brandname.upcase %></strong></h3>
@@ -42,25 +36,10 @@
               <button type="button" class="btn-lens-primary btn-lens margin-bottom-10" data-toggle="modal" data-target="#bookModal">Book</button>
         <% end %>
           </div>
-      <%= render 'shared/map' %>
+          </div>
+
     </div>
   </div>
 </div>
-
-<div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
 </div>
 
