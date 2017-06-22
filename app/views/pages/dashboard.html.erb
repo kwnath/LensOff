@@ -7,6 +7,7 @@
     <li>Lens price: <%= l.price %></li>
     <li>Lens condition: <%= l.condition %></li>
     <p><%= link_to "Lens details", lense_path(l) %></p>
+    <%= link_to "edit",  edit_lense_path(l), class: "btn-lens-primary btn-lens" %>
   </ul>
 <% end %>
 

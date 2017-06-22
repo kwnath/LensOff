@@ -1,5 +1,5 @@
 class LensesController < ApplicationController
-
+  before_action :authenticate_user!, :except => [:show, :index]
   def index
     @lenses = Lense.all
     @search = Lense.new
@@ -39,7 +39,8 @@ class LensesController < ApplicationController
   end
 
   def create
-    @lense = Lense.create(lenses_params)
+    @lense = Lense.new(lenses_params)
+    @lense.user = current_user
     if @lense.save
       redirect_to lense_path(@lense)
     else
@@ -49,7 +50,11 @@ class LensesController < ApplicationController
 
   def edit
     @lense = Lense.find(params[:id])
-    render :new
+    if @lense.user == current_user
+      render :new
+    else
+      redirect_to error_lenses_path
+    end
 
   end
 
@@ -60,7 +65,13 @@ class LensesController < ApplicationController
   end
 
   def destroy
-        @lense = Lense.find(params[:id])
+    @lense = Lense.find(params[:id])
+    if @lense.user == current_user
+      @lense.destroy
+      redirect_to dashboard_path
+    else
+      redirect_to error_lenses_path
+    end
   end
 
   private
