@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   get '/super', to: 'pages#super'
   get '/lenses/search', to: 'lenses#search'
   get 'error_lenses', to: 'lenses#error_message'
