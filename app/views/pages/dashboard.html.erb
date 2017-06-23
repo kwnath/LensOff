@@ -1,31 +1,53 @@
 <div class="container">
   <div class="row middle">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <h1>Dashboard</h1>
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="profile">
+            <h2 class=""><i class="fa fa-tachometer"></i> Dashboard</h2>
+            <hr>
+            <div class="overflow-h">
+              <h2 class=""><i class="fa fa-camera-retro"></i> Renting</h2>
+                <h2>My Bookings</h2>
+                 <% @my_bookings.each do |booking| %>
+                 <div class="col-md-6">
+                    <%= render :partial => 'my_bookings', locals: {booking: booking} %>
+                  </div>
+                 <% end %>
+                 <hr>
+              <h2 class="padding-top-30"><i class="fa fa-camera-retro"></i> Lending</h2>
+            </div>
 
-      <h1>Renting</h1>
+              <h2>My Lenses</h2>
 
-      <h2>My Bookings</h2>
-      <% @my_bookings.each do |booking| %>
-        <%= render :partial => 'my_bookings', locals: {booking: booking} %>
-      <% end %>
-      <!-- Headings maybe should be more defined RENTING AND LENDING -->
-      <h1>Lending</h1>
+              <% if @my_lenses.nil? %>
+                <h2>You have no lenses to lend.</h2>
+                <%= link_to "Add one now!", new_lense_path, class: "text-bigger" %>
+              <% else %>
+                <% @my_lenses.each do |lense| %>
+                 <div class="col-md-6">
+                  <%= render :partial => 'my_lenses', locals: {lense: lense} %>
+                  </div>
+                <% end %>
+              <% end %>
+              <h2>Reserved Lenses</h2>
 
-      <h2>Lenses</h2>
-      <!-- Show only lenses that haven't been booked -->
-      <% @my_lenses.each do |lense| %>
-        <%= render :partial => 'my_lenses', locals: {lense: lense} %>
-      <% end %>
-      <h2>Reserved Lenses</h2>
-      <!-- If condition to show only bookings -->
-      <% @reserved_lenses.each do |lense| %>
-        <%= render :partial => 'my_lenses', locals: {lense: lense} %>
-      <% end %>
-    </div>
+              <% if @reserved_lenses %>
+                <% @reserved_lenses.each do |lense| %>
+                    <%= render :partial => 'my_lent_lenses', locals: {lense: lense} %>
+                  <% end %>
+                  <% else %>
+                    <h2>No one has booked your lenses :(</h2>
+              <p>there there...</p>
+              <% end %>
   </div>
 </div>
+</div>
 
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Headings maybe should be more defined RENTING AND LENDING -->
 <% if current_user.email == 'jay.gao@139.com' %>
-  <h2><%= link_to "Super Function", super_path %></h2>
+<h2><%= link_to "Super Function", super_path %></h2>
 <% end %>
