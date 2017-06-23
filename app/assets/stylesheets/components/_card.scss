@@ -1,7 +1,3 @@
-.card-category {
-  padding: 20px;
-}
-
 .card:hover {
  box-shadow: 0 0 7px 1px #eceaea;
  transform: scale(1.02);
@@ -11,6 +7,20 @@
   margin: 0 auto;
 }
 
+// .card {
+//   margin-bottom: 20px;
+
+// }
+
 .thumbnail {
-  min-height: 350px;
+  min-height: 300px;
+}
+
+.pad-bot-20 {
+  padding: 5px;
+  padding-bottom: 10px;
+}
+
+.vertical-align {
+  vertical-align: middle;
 }

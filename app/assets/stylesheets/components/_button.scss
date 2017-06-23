@@ -8,6 +8,17 @@
   shadow-opacity: 0.3;
 }
 
+.btn-lens-primary-white {
+  color: #fff !important;
+  background-color: transparent;
+  border-color: #fff;
+  border: 1px solid #fff;
+  font-weight: 300 !important;
+  box-shadow: 1px 1px 1px #fff;
+  shadow-opacity: 0.3;
+  text-decoration: none;
+}
+
 // Overiding bootstrap variables for button
 .btn-lens {
   display: inline-block;
@@ -33,5 +44,12 @@
 .btn-lens-primary:hover, .btn-lens-primary:active {
   color: #225560;
   border-color: #225560;
+  box-shadow: none;
+}
+
+
+.btn-lens-primary-white:hover, .btn-lens-primary-white:active {
+  border-color: #D64345;
+  duration: 0.3s;
   box-shadow: none;
 }

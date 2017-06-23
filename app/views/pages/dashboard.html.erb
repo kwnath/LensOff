@@ -1,31 +1,38 @@
 <div class="container">
-<div class="row middle">
-<div class="col-xs-12 col-md-6 col-md-offset-3">
-<h1>Dashboard</h1>
-<h2>My lenses</h2>
-<% current_user.lenses.each do |l| %>
-<br>
-    <p>Lens name: <%= l.name %></p>
-    <p>Lens price: <%= l.price %></p>
-    <p>Lens condition: <%= l.condition %></p>
-    <p><%= link_to "Lens details", lense_path(l) %>
-    <%= link_to "edit",  edit_lense_path(l) %>
-    <%= link_to "Delete", lense_path(l) %>
-    </p>
-<% end %>
+  <div class="row middle">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h1>Dashboard</h1>
 
-<h2>My bookings</h2>
-<% current_user.bookings.each do |b| %>
-    <p>Lense name: <%= b.lense.name %></p>
-    <p>Start date: <%= b.start_date %></p>
-    <p>End date: <%= b.end_date %></p>
-    <%= link_to "Booking details", lense_booking_path(b.lense.id, b.id) %>
-    <div class="margin-top-30"> </div>
-<% end %>
-</div>
-</div>
-</div>
+      <h1>Renting</h1>
 
+      <h2>My Bookings</h2>
+      <% current_user.bookings.each do |b| %>
+      <p>Lense name: <%= b.lense.name %></p>
+      <p>Start date: <%= b.start_date %></p>
+      <p>End date: <%= b.end_date %></p>
+      <%= link_to "Booking details", lense_booking_path(b.lense.id, b.id) %>
+      <div class="margin-top-30"> </div>
+      <% end %>
+      <!-- Headings maybe should be more defined RENTING AND LENDING -->
+
+      <h1>Lending</h1>
+      <h2>Lenses</h2>
+      <!-- Show only lenses that haven't been booked -->
+      <% current_user.lenses.each do |l| %>
+      <br>
+      <p>Lens name: <%= l.name %></p>
+      <p>Lens price: <%= l.price %></p>
+      <p>Lens condition: <%= l.condition %></p>
+      <p><%= link_to "Lens details", lense_path(l) %>
+        <%= link_to "edit",  edit_lense_path(l) %>
+        <%= link_to "Delete", lense_path(l) %>
+      </p>
+      <% end %>
+      <h2>Reserved Lenses</h2>
+      <!-- If condition to show only bookings -->
+    </div>
+  </div>
+</div>
 
 <% if current_user.email == 'jay.gao@139.com' %>
 <h2><%= link_to "Super Function", super_path %></h2>
