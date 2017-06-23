@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, :except => [:home, :search]
+  before_action :authenticate_user!, :except => [:home, :search, :user_profile]
   def home
     @lenses = Lense.where.not(latitude: nil, longitude: nil)
     # @lense = Lense.find(params[:id])
