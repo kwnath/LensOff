@@ -8,15 +8,10 @@
           <% end %>
     </div>
 
-
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
       <div class="middle padding-top-20">
         <h1 class="border"><%= @lense.name %></h1>
         <hr id="hr-length">
-          <%= cl_image_tag @lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"350", :crop=>"fit", class: "middle" %>
-          <% @lense.photos.drop(1).each do |p| %>
-          <%= cl_image_tag p.path, :client_hints=>true, :width=>"auto:100:387", :height=>"300", :crop=>"fit", class: "middle" %>
-          <% end %>
         <h3><strong><%= @lense.brandname.upcase %></strong></h3>
         <% if @lense.description %>
           <p><%= @lense.description %></p>
@@ -28,17 +23,18 @@
         <p><strong>Camera Type:</strong>  <%= @lense.camera_type %></p>
         <strong><h3 class="border">$<%= @lense.price %>/day</h3></strong>
                 <hr id="hr-length">
-     </div>
+
         <% if user_signed_in? %>
           <% if @lense.user_id == current_user.id %>
             <%= link_to "Edit",  edit_lense_path, class: "btn-lens-primary btn-lens margin-bot-25 margin-top-5" %>
             <% else %>
-              <%= link_to "book",  new_lense_booking_path(@lense), class: "btn-lens-primary btn-lens margin-bot-30" %>
+              <%= link_to "Book",  new_lense_booking_path(@lense), class: "btn-lens-primary btn-lens margin-bot-30" %>
+          <% end %>
+        <% else %>
+               <%= link_to "Book",  new_lense_booking_path(@lense), class: "btn-lens-primary btn-lens margin-bot-30" %>
         <% end %>
-          <% else %>
-               <%= link_to "book",  new_lense_booking_path(@lense), class: "btn-lens-primary btn-lens margin-bot-30" %>
-        <% end %>
-          <%= link_to "see owner profile", "/user_profile/"+@lense.user.id.to_s %>
+            <%= link_to "See owner profile", "/user_profile/"+@lense.user.id.to_s %>
+      </div>
    </div>
   </div>
 </div>
