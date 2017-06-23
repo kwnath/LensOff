@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   end
 
   def user_profile
-    @user = User.all
+    @user = User.find(params[:id])
   end
 end
 
