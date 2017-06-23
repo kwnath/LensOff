@@ -21,10 +21,11 @@ class Lense < ApplicationRecord
   scope :aperture_min, -> (min) { where( "aperture_min > ?", min )}
   scope :aperture_max, -> (max) { where( "aperture_max < ?", max )}
 
+
+  scope :reserved, -> { User.joins(:lenses).where("lenses.id is not null") }
+  has_many :users, through: :reserved_lenses, source: "bookings"
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
-
-
-
 
 end

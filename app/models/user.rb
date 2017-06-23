@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :booked_lenses, through: :bookings, source: "lense"
   has_many :lenses
+  # lenses that have been reserved
+  has_many :reserved_lenses, through: :lenses, source: "booking"
+
+
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
