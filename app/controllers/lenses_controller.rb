@@ -14,7 +14,7 @@ class LensesController < ApplicationController
 
   def show
     @lense = Lense.find(params[:id])
-    if @lense.latitude? && @lense.longtitude?
+    if @lense.latitude? && @lense.longitude?
       @hash = Gmaps4rails.build_markers(@lense) do |l, marker|
         marker.lat l.latitude
         marker.lng l.longitude
