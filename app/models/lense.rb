@@ -23,8 +23,8 @@ class Lense < ApplicationRecord
 
 
   scope :reserved, -> { User.joins(:lenses).where("lenses.id is not null") }
-  has_many :users, through: :reserved_lenses, source: "bookings"
-
+  # has_many :user, through: :reserved, source: "lenses"
+  # Users reserved lenses
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
