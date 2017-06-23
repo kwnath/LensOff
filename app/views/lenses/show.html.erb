@@ -8,6 +8,14 @@
       <div class="middle padding-top-20">
         <h1 class="border"><%= @lense.name %></h1>
         <hr id="hr-length">
+        <div>
+          <%= cl_image_tag @lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"350", :crop=>"fit", class: "middle" %>
+        </div>
+          <% @lense.photos.drop(1).each do |p| %>
+        <div>
+          <%= cl_image_tag p.path, :client_hints=>true, :width=>"auto:100:387", :height=>"300", :crop=>"fit", class: "middle" %>
+        </div>
+          <% end %>
         <h3><strong><%= @lense.brandname.upcase %></strong></h3>
         <% if @lense.description %>
           <p><%= @lense.description %></p>
@@ -31,6 +39,9 @@
         <% end %>
           </div>
           </div>
+
+
+  <%= render 'shared/map' %>
 
   <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
