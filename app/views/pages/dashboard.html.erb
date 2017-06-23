@@ -28,11 +28,14 @@
                   </div>
                 <% end %>
               <% end %>
+              <div class="col-xs-12">
               <h2>Reserved Lenses</h2>
-
+</div>
               <% if @reserved_lenses %>
                 <% @reserved_lenses.each do |lense| %>
+                     <div class="col-md-6">
                     <%= render :partial => 'my_lent_lenses', locals: {lense: lense} %>
+                    </div>
                   <% end %>
                   <% else %>
                     <h2>No one has booked your lenses :(</h2>
