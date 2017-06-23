@@ -14,8 +14,8 @@ class LensesController < ApplicationController
 
   def show
 
-    @lense = Lense.where.not(latitude: nil, longitude: nil).find(params[:id])
-    # @lense = Lense.find(params[:id])
+    # @lense = Lense.where.not(latitude: nil, longitude: nil).find(params[:id])
+    @lense = Lense.find(params[:id])
 
 
 

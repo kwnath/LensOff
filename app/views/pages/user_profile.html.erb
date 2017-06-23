@@ -2,6 +2,9 @@
   <div class="row text-center">
     <div class="col-xs-12 col-md-12">
       <h1 class="border">Profile</h1>
+      <% if @user == current_user %>
+      <p><%= link_to "edit", edit_user_registration_path %></p>
+      <% end %>
       <hr id="hr-length">
       <p><strong>Username:</strong> <%= @user.email %></p>
 
