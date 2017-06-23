@@ -12,8 +12,8 @@
 }
 
 .banner_background {
-  background: linear-gradient(333deg, #32b796, #469ae0);
-  background-size: 400% 400%;
+  background: linear-gradient(-225deg, rgba(50,183,150,0.6) 0%, rgba(70,154,224,0.6) 50%), url('background.jpg') no-repeat center;
+  background-size: cover;
   height: 350px;
   width: 100vw;
   display: flex;
@@ -23,7 +23,6 @@
   -webkit-animation: gradientMove 30s ease infinite;
   -moz-animation: gradientMove 30s ease infinite;
   animation: gradientMove 30s ease infinite;
-
 }
 
 @-webkit-keyframes gradientMove {

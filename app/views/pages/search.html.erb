@@ -1,0 +1,32 @@
+  <div class="row text-center">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+    <h1 class="header-title" >Search Results</h1>
+      <% @lenses.each do |lense| %>
+      <%= link_to lense_path(lense) do %>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
+        <div class="card thumbnail">
+          <% if lense.photos? %>
+            <%= cl_image_tag lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"150", :crop=>"fit"%>
+          <% end %>
+        <div class="card-category">
+        <hr>
+          <h3> <%= lense.name %> </h3>
+          <p>$<%= lense.price %> / day</p>
+          <p> Condition: <strong> <%= lense.condition %> </strong></p>
+        </div>
+        </div>
+      </div>
+    <% end %>
+      <% end %>
+      </div>
+    <!-- Button (call-to-action) -->
+</div>
+
+<div class="text-center">
+  <p>Have a lense to rent?</p>
+  <%= link_to "Add a new lense", new_lense_path, class: "text-bigger" %>
+  <%= link_to 'back', lenses_path %>
+</div>
+
+
+

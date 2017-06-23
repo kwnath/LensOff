@@ -15,50 +15,30 @@ body {
 }
 
 .footer {
+  color: $a-hover-underline;
   position: absolute;
-right: 0;
+  right: 0;
   left: 0;
   margin-top: 20px;
   padding: 2rem;
-  background-color: #efefef;
+  background-color: transparent !important;
   text-align: center;
 }
 
-// .footer
-// {
-// position: relative;
-// margin-top: -40px; /* negative value of footer height */
-// clear:both;
-// text-align: center;
-// vertical-align: middle;
-// padding-top: 15px;
-// bottom: 0;
-// background-color: transparent !important;
-// }
-
-// footer {
-//   margin: 0 auto;
-//   color: $a-hover-underline;
-// }
-
-// #footer ul {
-//   margin-top: 10px;
-// }
-// #footer a {
-//   color: $a-hover-underline;
-//   font-size: 30px;
-//   letter-spacing: 20px;
-//   transition: color 0.5s ease;
-//   box-shadow: none;
-// }
-// #footer a:hover{
-//   color: $bg-color;
-// }
+.footer a {
+  color: $a-hover-underline !important;
+  transition: color 0.5s ease;
+  box-shadow: none;
+}
+.footer a:hover{
+  color: $text-color !important;
+  box-shadow: none;
+}
 
 
-// .highlight {
-//   &:hover{
-//    color:$text-color;
-//    transition: color 0.5s ease;
-// }
-// }
+.highlight {
+  &:hover{
+   color:$text-color;
+   transition: color 0.5s ease;
+}
+}
