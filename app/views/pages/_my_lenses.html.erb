@@ -1,0 +1,35 @@
+<div class="profile">
+      <div class="profile-blog profile-blog-cam blog-border">
+  <% if lense.photos? %>
+              <%= cl_image_tag lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"350", :crop=>"fill", class: "rounded-xs" %>
+          <% else %>
+      <% end %>
+                <div class="clearfix margin-bottom-10"></div>
+
+        <div class="name-location">
+          <strong>
+           <h2><%= lense.name %></h2>
+          </strong>
+        </div>
+        <div class="clearfix margin-bottom-10"></div>
+            <p><strong>Description:</strong><%= lense.description %></p>
+          <p><strong>Aperture</strong>  f<%= lense.aperture_min %>-<%= lense.aperture_max %></p>
+          <p><strong>Focal Length:</strong>  <%= lense.focal_length_min %>-<%= lense.focal_length_max %>mm</p>
+          <p><strong>Image stabilization:</strong>  <%= lense.image_stabilization %></p>
+          <p><strong>Mount:</strong>  <%= lense.mount_type %></p>
+          <p><strong>Camera Type:</strong>  <%= lense.camera_type %></p>
+          <p><strong>Condition:</strong><%= lense.condition %></p>
+          <p></p>
+        <hr>
+        <ul class="list-inline share-list">
+            <li><i class="fa fa-money"></i>Price: <%= lense.price %></li>
+            <!-- <li><i class="fa fa-hourglass-o"></i>Status: </li> -->
+            <li><i class="fa fa-info"></i> <%= link_to "Lens details", lense_path(lense) %></li>
+            <li><i class="fa fa-pencil-square-o"></i>  <%= link_to "edit",  edit_lense_path(lense) %></li>
+            <li><i class="fa fa-trash-o"></i><%= link_to "Delete", lense_path(lense) %></li>
+        </ul>
+  </div>
+</div>
+                <div class="clearfix margin-bottom-10"></div>
+                <div class="clearfix margin-bottom-10"></div>
+

@@ -1,0 +1,51 @@
+<div class="profile">
+      <div class="profile-blog blog-border">
+        <% avatar_url = lense.bookings.map(&:user).map(&:facebook_picture_url) || "https://bootdey.com/img/Content/user_1.jpg" %>
+        <%= image_tag avatar_url, class: "rounded-x" %>
+        <div class="name-location">
+          <strong>
+          <% if lense.user.first_name %>
+          <%= lense.user.first_name %>
+          <% else %>
+            <%= lense.user.email %>
+          <% end %>
+          </strong>
+          <% if lense.address %>
+          <span><i class="fa fa-map-marker"></i>
+            <%= lense.address %>
+          </span>
+          <% else %>
+          <span><i class="fa fa-map-marker xs"></i>
+            <span class="xs" >Address not verified</span>
+          </span>
+          <% end %>
+        </div>
+        <div class="clearfix margin-bottom-10"></div>
+        <% if lense.description %>
+       <h2><%= lense.name %></h2>
+        <p><%= lense.description %></p>
+        <p><strong>Condition:</strong><%= lense.condition %></p>
+        <% else %>
+        <%= lense.name %>
+        <p><strong>Condition:</strong><%= lense.condition %></p>
+        <% end %>
+        <p></p>
+        <hr>
+        <ul class="list-inline share-list">
+          <li><i class="fa fa-money"></i>Price: <%= lense.price %></li>
+          <!-- <li><i class="fa fa-hourglass-o"></i>Status: </li> -->
+          <% if lense.bookings.map(&:start_date) %>
+          <li><i class="fa fa-calendar"></i>Start: <%= lense.bookings.map(&:start_date) %></li>
+          <% else %>
+          <% end %>
+          <% if lense.bookings.map(&:end_date) %>
+          <li><i class="fa fa-calendar"></i>End: <%= lense.bookings.map(&:end_date) %> </li>
+          <% else %>
+          <% end %>
+          <li><i class="fa fa-user"></i>You: <%= lense.bookings.map(&:user).map(&:email) %> </li>
+        </ul>
+  </div>
+</div>
+
+                <div class="margin-bottom-30"></div>
+
