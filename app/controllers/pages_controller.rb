@@ -9,6 +9,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    authenticate_user!
+    @my_bookings = current_user.bookings
+    @my_lenses = current_user.lenses
+    @reserved_lenses = @my_lenses.lent
   end
 
   def error_message

@@ -3,7 +3,10 @@
     <div class="col-xs-12 col-md-12">
 <div class="inner">
         <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+        <% if @lense.photos? %>
               <%= cl_image_tag @lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"350", :crop=>"fit", class: "middle" %>
+          <% else %>
+      <% end %>
         </div>
      <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
       <div class="middle padding-top-20">

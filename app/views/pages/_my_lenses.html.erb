@@ -1,0 +1,13 @@
+<hr>
+<p>Lens name: <%= lense.name %></p>
+<p>Lens price: <%= lense.price %></p>
+<p>Lens condition: <%= lense.condition %></p>
+<p>
+  <%= link_to "Lens details", lense_path(lense) %>
+  <%= link_to "edit",  edit_lense_path(lense) %>
+  <%= link_to "Delete", lense_path(lense) %>
+</p>
+
+<p>Who wants the lense: <%= lense.bookings.map(&:user).map(&:email) %></p>
+
+<p>Who owns the lense: <%= lense.user.email %></p>

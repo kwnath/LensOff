@@ -1,0 +1,13 @@
+<p>Lense name: <%= booking.lense.name %></p>
+
+<p>Start date: <%= booking.start_date %></p>
+
+<p>End date: <%= booking.end_date %></p>
+
+<p>Who wants the lense: <%= booking.user.email %></p>
+
+<p>Who owns the lense: <%= booking.lense.user.email %></p>
+
+
+<%= link_to "Booking details", lense_booking_path(booking.lense.id, booking.id) %>
+<div class="margin-top-30"></div>
