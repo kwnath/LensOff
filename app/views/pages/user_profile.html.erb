@@ -1,1 +1,55 @@
-users_profile.html.erb
+<div class="container">
+  <div class="row text-center">
+    <div class="col-xs-12 col-md-12">
+      <h1 class="border">Profile</h1>
+      <% if @user == current_user %>
+      <p><%= link_to "edit", edit_user_registration_path %></p>
+      <% end %>
+      <hr id="hr-length">
+      <p><strong>Username:</strong> <%= @user.email %></p>
+
+      <% if @user.facebook_picture_url != nil%>
+        <%= @user.facebook_picture_url %>
+      <% else %>
+      <% end %>
+
+      <strong>Bio:</strong>
+      <% if @user.bio != nil%>
+        <p><%= @user.bio %></p>
+      <% else %>
+        <p> --</p>
+      <% end %>
+
+      <strong>Photo Experience:</strong>
+      <% if @user.photo_experience != nil%>
+        <p><%= @user.photo_experience %></p>
+      <% else %>
+        <p> --</p>
+      <% end %>
+
+      <hr id="hr-length">
+
+      <h3 class="border">User Lenses:</h3>
+        <div class="margin-top-30"></div>
+        <% @user.lenses.each do |lense| %>
+          <%= link_to lense_path(lense) do %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">
+      <div class="card thumbnail">
+        <% if lense.photos? %>
+        <%= cl_image_tag lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"150", :crop=>"fit", class: "pad-bot-20"%>
+        <% end %>
+        <div class="card-category vertical-align">
+          <hr>
+          <h3> <%= lense.name %> </h3>
+          <p>$<%= lense.price %> / day</p>
+          <p> Condition: <strong> <%= lense.condition %> </strong></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+
+
+    </div>
+  </div>
+</div>

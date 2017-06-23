@@ -19,54 +19,61 @@
 </div>
 </div>
 
-<div class="text-center padding-top-20">
+<div class="text-center padding-top-60">
     <h1 id="uppercase">How can I rent a lens?</h1>
+    <p>Rent a lens in three easy steps!</p>
 </div>
 <div class="padding-top-20"></div>
 <div class="container">
   <div class="row text-center pullUp">
 
-    <div class="col-xs-12 col-md-10 col-md-offset-1">
- <%= link_to(lenses_path) do %>
+    <div class="col-xs-12 col-md-10 col-md-offset-1 padding-top-60">
+
         <div class="col-xs-12 col-md-4 no-text-decoration feature">
            <svg class="icon icon-4 margin-bottom-10">
             <use xlink:href="#camera" />
           </svg>
-            <p>Select your camera type</p>
+            <p>Start out with selecting your camera type...</p>
         </div>
-      <% end %>
-      <%= link_to(lenses_path) do %>
-        <div class="col-xs-12 col-md-4 no-text-decoration feature">
+
+         <div class="col-xs-12 col-md-4 no-text-decoration feature">
           <svg class="icon icon-4 margin-bottom-10">
             <use xlink:href="#technology-2" />
-          </svg><p>Select your lens</p>
+          </svg>
+            <p>...specify the lenses you are looking for...</p>
         </div>
-      <% end %>
 
-      <%= link_to do %>
+
+
       <div class="col-xs-12 col-md-4 margin-bottom-10 no-text-decoration feature">
         <svg class="icon icon-4 margin-bottom-10">
           <use xlink:href="#firework" />
           </svg>
-        <p>... tadaaa! DONE! As simple as that.</p>
+        <p>...and select the dates. You're all set!</p>
       </div>
-      <% end %>
-
 
     </div>
   </div>
 </div>
-<div class="container margin-top-20">
+
+
+
+<div class="text-center padding-top-60">
+    <h1 id="uppercase">Try it yourself</h1>
+</div>
+<%= render 'homesearch' %>
+
+<div class="container padding-top-60">
   <div class="row text-center">
     <div class="col-xs-10 col-xs-offset-1">
     <div class="margin-bottom-30">
       <h1 id="uppercase">MAP of lenses</h1>
     </div>
-      <%= render 'shared/map' %>
+
     </div>
   </div>
 </div>
-
+<%= render 'shared/map' %>
 
   <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>

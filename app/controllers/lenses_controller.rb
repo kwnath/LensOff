@@ -13,18 +13,13 @@ class LensesController < ApplicationController
   end
 
   def show
-
-    @lense = Lense.where.not(latitude: nil, longitude: nil).find(params[:id])
-    # @lense = Lense.find(params[:id])
-
-
-
-    @hash = Gmaps4rails.build_markers(@lense) do |l, marker|
-      marker.lat l.latitude
-      marker.lng l.longitude
-
+    @lense = Lense.find(params[:id])
+    if @lense.latitude? && @lense.longitude?
+      @hash = Gmaps4rails.build_markers(@lense) do |l, marker|
+        marker.lat l.latitude
+        marker.lng l.longitude
+      end
     end
-
   end
 
   def new
