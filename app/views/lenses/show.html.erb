@@ -13,6 +13,14 @@
       <div class="middle padding-top-20">
         <h1 class="border"><%= @lense.name %></h1>
         <hr id="hr-length">
+        <div>
+          <%= cl_image_tag @lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"350", :crop=>"fit", class: "middle" %>
+        </div>
+          <% @lense.photos.drop(1).each do |p| %>
+        <div>
+          <%= cl_image_tag p.path, :client_hints=>true, :width=>"auto:100:387", :height=>"300", :crop=>"fit", class: "middle" %>
+        </div>
+          <% end %>
         <h3><strong><%= @lense.brandname.upcase %></strong></h3>
         <% if @lense.description %>
           <p><%= @lense.description %></p>
@@ -34,6 +42,7 @@
           <% else %>
               <button type="button" class="btn-lens-primary btn-lens margin-bottom-10" data-toggle="modal" data-target="#bookModal">Book</button>
         <% end %>
+
     </div>
   </div>
 </div>

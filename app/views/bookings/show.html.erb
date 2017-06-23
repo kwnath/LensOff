@@ -2,12 +2,18 @@
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
       <h1><%= @booking.lense.name %></h1>
-      <h3>Booking ID:</h3><p><%= @booking.id %></p>
+      <br>
       <h3>Booked from:</h3><p><%= @booking.start_date %></p>
       <h3>Booked until:</h3><p><%= @booking.end_date %></p>
-      <%= image_tag("http://via.placeholder.com/300x300") %>
+      <h3>Renting From:</h3><p><%= @booking.lense.user.first_name %></p>
+
+      <%= cl_image_tag @booking.lense.photos.first.path, :client_hints=>true, :width=>"auto:100:387", :height=>"350", :crop=>"fit", class: "middle" %>
+      <h3>Lens Description:</h3>
       <p><%= @booking.lense.description %></p>
-      <h3>Price:</h3><p><%= @booking.lense.price %> RMB/day</p>
+      <br>
+      <h3>Price Per Day:</h3><p><%= @booking.lense.price %> RMB/day</p>
+      <br>
+      <h3>Total Price:</h3><p><%= @booking.lense.price * ((@booking.end_date - @booking.start_date)/ 2678400) %> RMB </p>
       <br>
       <%= link_to 'Edit booking', edit_lense_booking_path(params[:lense_id],@booking) %> |
       <%= link_to 'Delete booking', lense_booking_path(@booking), method: :delete, data: { confirm: 'Are you sure you want to delete this booking?'}  %> |
